@@ -168,8 +168,66 @@ const reverseNum = (num) => [...JSON.stringify(num)].reverse().join('');
 
 
 
+// Q. Sum All Numbers in a Range
 
-// CHALLENGE: Sum in Range
+// input: array of two numbers Return the sum of those two numbers plus the sum of all the numbers between them. 
+
+// EXAMPLE:     1 + 2 + 3 + 4 : 10
+// sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+
+// ** The lowest number will not always come first.
+
+// CHALLENGE: Sum in Range 
+    // pass in an array as an argument 
+    // find the smallestNum
+    // find the largestNum
+
+// Recusion Solution 
+
+function sumAllInRange(arr) {
+    let rangeSum = 0; 
+    if (!arr.length) return [];
+    let maxNum = arr.reduce((acc, curr) => Math.max(acc, curr)); 
+    let minNum = arr.reduce((acc, curr) => Math.min(acc, curr));  
+    for (let i = minNum; i < maxNum; i++) {
+        rangeSum += i; 
+    }
+    return rangeSum; 
+}
+
+// For-loop Solution 
+
+// function sumAllInRange(arr) {
+//     let max = arr[0]; 
+//     let min = arr[1]; 
+//     let sumRange = 0;
+//     let i;  
+//     for (i = 0; i < arr.length; i++) { 
+//         if (arr[i] > max) {
+//             max = arr[i]; 
+//         }
+//     }
+//     for (i = 0; i < arr.length; i++) { 
+//         if (arr[i] < min) {
+//             min = arr[i]; 
+//         }
+//     }
+//     for (let i = min; i < max; i++) {
+//         sumRange += i; 
+//     }
+//     return sumRange; 
+// }
+
+
+// console.log(sumAllInRange([])); 
+// console.log(sumAllInRange([1, 5])); // 10
+// console.log(sumAllInRange([5, 1])); // 10
+// console.log(sumAllInRange([7, 1])); 
+// console.log(sumAllInRange(([1, 7])));
+// console.log(sumAllInRange(([6, 369])));
+// console.log(sumAllInRange(([369, 6])));
+
 
 
 
