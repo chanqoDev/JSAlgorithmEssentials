@@ -49,10 +49,10 @@ function factorial(n, productTotal = 1) {
 // CHALLENGE: Product of an array
 
 // Solution : RECURSIVE Tail-Optimization
-// function productOfArr(arr, output = 1) {
-//  if(!arr.length) return output; 
-//  return productOfArr(arr.splice(1), output *= arr[0]); 
-// };
+function productOfArr(arr, output = 1) {
+ if(!arr.length) return output; 
+ return productOfArr(arr.splice(1), output *= arr[0]); 
+};
 
 // Solution 2: RECURSION
 // function productOfArr(arr, i = 1) {
@@ -82,10 +82,10 @@ function factorial(n, productTotal = 1) {
 
 // Write a recursive function sum that calculates the sum of an array of integers.
 
-// function sum(array, acc = 0) {
-// 	if (!array.length) return acc; 
-//   return sum(array.splice(1), acc += array[0]); 
-// }
+function sum(array, acc = 0) {
+	if (!array.length) return acc; 
+  return sum(array.splice(1), acc += array[0]); 
+}
 // HOF Solution : Sum of array
 // const sum = (arr) => arr.reduce((acc, curr) => acc + curr, 0); 
 
@@ -94,14 +94,29 @@ function factorial(n, productTotal = 1) {
 //  console.log(sum([1,2,3,4,5,6])); // -> returns 21
 
 
+ 
 
+// CHALLENGE: Reverse a string 
+ // Native Method solution
+ // const reversed = (str) => [...str].reverse().join(''); 
 
-
-
-
-
-
-// CHALLENGE: Reverse a string
+ // For-Loop Solution
+// function reversed(str) {
+//     let reversed = ''; 
+//     for (let i = str.length-1; i > 0; i--) {
+//         reversed += str[i]; 
+//     }
+//     return reversed; 
+// }
+ 
+// Reverse in place using recursion
+function reversed(string) {
+    if (!string) return '';  // if the string is empty return an empty string
+    return reversed(string.slice(1)) + string[0]; 
+}
+  
+// console.log(reversed('helP'));  // PleH
+// console.log(reversed('reversE'));  // Esrever
 
 
 
