@@ -213,6 +213,7 @@ function sumAllInRange(arr) {
 //             min = arr[i]; 
 //         }
 //     }
+    
 //     for (let i = min; i < max; i++) {
 //         sumRange += i; 
 //     }
@@ -228,24 +229,61 @@ function sumAllInRange(arr) {
 // console.log(sumAllInRange(([6, 369])));
 // console.log(sumAllInRange(([369, 6])));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// CHALLENGE: Sum of numbers in Arr
-
-
 // CHALLENGE: Count letter in string occurance 
+
+function countLetter(str) {
+   let cache = {}; 
+    for(let i = 0; i < str.length; i++) {
+        if(!cache[str[i]]) {
+            cache[str[i]] = 1; 
+        }else {
+            cache[str[i]] += 1; 
+        }
+    }
+   return cache; 
+}
+
+// using a HOF
+// function countLetter(str) {
+// let obj = {}; 
+// [...str].forEach(function(elem) {
+//   if(obj[elem]) {
+//       obj[elem] += 1; 
+//   }else{
+//       obj[elem] = 1; 
+//   }
+// }); 
+//     return obj; 
+// }
+
+// console.log(countLetter('')); // {} 
+// console.log(countLetter('Coffee')); // { C: 1, o: 1, f: 2, e: 2 }
+// console.log(countLetter('member')); // { m: 2, e: 2, b: 1, r: 1 }
+
+ 
+
+// Q. 'Number of occurrances of a given char in a string'
+function counterCharacter(sentence, str) {
+    let counter = 0; 
+    let words = ''; 
+    for (let word of sentence) {
+        if ( word === str) {
+            words += str;
+            counter++; 
+        }
+    }
+    return `${words} : ${counter}`; 
+}
+
+console.log(counterCharacter("Pizza is goodz", "z")); 
+
+
+
+
+
+
+
+
 
 // CHALLENGE: Count words
 
