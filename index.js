@@ -82,6 +82,8 @@ function productOfArr(arr, output = 1) {
 
 // Write a recursive function sum that calculates the sum of an array of integers.
 
+// CHALLENGE: Sum of numbers in Arr
+
 function sum(array, acc = 0) {
 	if (!array.length) return acc; 
   return sum(array.splice(1), acc += array[0]); 
@@ -89,12 +91,30 @@ function sum(array, acc = 0) {
 // HOF Solution : Sum of array
 // const sum = (arr) => arr.reduce((acc, curr) => acc + curr, 0); 
 
+// using while-loop 
+// function sum(array) {
+//     let acc = 0; 
+//     while (array.length > 0) {
+//       acc += Number(array.splice(0,1))
+//     }
+//     return acc; 
+//   }
+
+// using for-of 
+// function addAllNumbers(array) {
+//     let sum = 0; 
+//     for(let num of array) {
+//       sum += num; 
+//     }
+//       return sum; 
+//   }
+
+
 //  console.log(sum([])) // 0
 //  console.log(sum([1,4,6])); // -> returns 11
 //  console.log(sum([1,2,3,4,5,6])); // -> returns 21
 
 
- 
 
 // CHALLENGE: Reverse a string 
  // Native Method solution
@@ -114,37 +134,54 @@ function reversed(string) {
     if (!string) return '';  // if the string is empty return an empty string
     return reversed(string.slice(1)) + string[0]; 
 }
-  
 // console.log(reversed('helP'));  // PleH
 // console.log(reversed('reversE'));  // Esrever
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CHALLENGE: Reverse a number
 
+// convert the integer into a string and spread it into an array
+
+// Solution: ES^6 syntax applying JSON.stringify() and methods
+const reverseNum = (num) => [...JSON.stringify(num)].reverse().join(''); 
+ 
+// const reverseInt = (int) =>   {
+//     const num = [...String(int)].reverse().join('');
+//     return parseInt(num);  
+// }
+
+ // BONUS Challenge:  Given a positive number reverse all the digits WITHOUT CONVERTING the number to a string!
+ function reverseInt(int) {
+     let revNum = 0;
+     while (int > 0) {
+         revNum = (revNum * 10) +  (int % 10); 
+         int = Math.floor(int / 10);
+     }
+     return revNum; 
+ }
+
+// console.log(reverseInt(41)); //14
+// console.log(reverseInt(12345)); // 54321
+// console.log(reverseInt(87654)) //45678
+// console.log(reverseInt(2032)); // 2302
+
+
+
+
+
 // CHALLENGE: Sum in Range
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // CHALLENGE: Sum of numbers in Arr
