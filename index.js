@@ -274,18 +274,69 @@ function counterCharacter(sentence, str) {
     }
     return `${words} : ${counter}`; 
 }
+// console.log(counterCharacter("Pizza is goodz", "z")); 
 
-console.log(counterCharacter("Pizza is goodz", "z")); 
-
-
-
-
-
-
-
-
+ 
 
 // CHALLENGE: Count words
+
+// Q. Given a string, "countWords" returns an object where each key is a word in the given string, with its value being how many times that word appeared in the given string.
+function countWords(string) {
+    if (!string) return ''; 
+    let words = string.split(' '); 
+    let obj = {}; 
+   words.forEach(word => {
+    if (!obj[word]) {
+        obj[word] = 1; 
+    }
+    obj[word] += 1; 
+   });
+   return obj; 
+};
+
+
+
+
+var output = countWords('ask a bunch get a bunch');
+console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // CHALLENGE: Countdown recursion
 
