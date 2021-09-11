@@ -294,16 +294,46 @@ function countWords(string) {
    return obj; 
 };
 
-
-
-
-var output = countWords('ask a bunch get a bunch');
-console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
-
+// var output = countWords('ask a bunch get a bunch');
+// console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
 
 
 
 
+// CHALLENGE: countdown recursion  
+// output: [ 5, 4, 3, 2, 1 ]
+
+function countdown(n) {
+ return [n].concat(n > 1 ? countdown(n-1) : []); 
+}
+// console.log(countdown()); 
+// console.log(countdown(0));
+// console.log(countdown(1));
+// console.log(countdown(5)); 
+// console.log(countdown(10));
+
+
+
+
+// CountUp 
+// Example output :  [1, 2, 3, 4, 5]
+ 
+
+function countup(n) {
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
+}
+
+ 
+// console.log(countup(0));
+// console.log(countup(1));
+// console.log(countup(5)); // [1, 2, 3, 4, 5]
+// console.log(countup(10));
 
 
 
@@ -324,21 +354,6 @@ console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// CHALLENGE: Countdown recursion
 
 // CHALLENGE: Calculate Average / Mean
 
