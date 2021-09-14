@@ -343,3 +343,63 @@ function countup(n) {
 // CHALLENGE: Nested Arr
 
 // CHALLENGE: Neste
+
+// ### VOWELS Function #####
+
+/*
+Create a function 'isVowel' that takes in a string (this string will be a single character) as an argument. "isVowel" should return true if the string is a vowel false if it is not. This function should consider letters a, e, i, o, and u to be vowels.
+*/
+// input: string
+// output : true or false if its not a vowel;
+
+// iterate the string
+// check if that string is equal to this is
+// return or false
+
+function isVowel(string) {
+  // if it contains this char a, e, i, o, and u return true; otherwise return false;
+  let newArr = string.split("");
+  for (let i = 0; i < newArr.length; i++) {
+    if (
+      newArr[i] === "a" ||
+      newArr[i] === "u" ||
+      newArr[i] === "e" ||
+      newArr[i] === "o" ||
+      newArr[i] === "i"
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+// console.log(isVowel('a')); // return true;
+// console.log(isVowel('u')); // return true;
+// console.log(isVowel('e')); // return true;
+// console.log(isVowel('i')); // return true
+// console.log(isVowel('r')); // return false;
+
+/*
+Create a function 'firstVowel' that uses your 'isVowel' function to return the index of the first vowel in a string.
+For example, if our input to 'firstVowel' is 'apple' then 'firstVowel' should return 0.
+If there is no vowel present in the string your function should return the string 'there is no vowel present'.
+*/
+
+// output: index, of the first vowel in a string
+// function firstVowel(string) {
+// for (let i = 0; i < string.length; i++) {
+// if (isVowel(string[i])) return i;
+// }
+// return 'there is no vowel present';
+// }
+
+const firstVowel = (str) => {
+  let vowels = [...str].filter((elem) => "a,e,i,o,u".includes(elem));
+  vowels = vowels.join("");
+  return vowels;
+};
+
+// console.log(firstVowel("apple"));
+// console.log(firstVowel("rmna"));
+// console.log(firstVowel("romad"))
+// console.log(firstVowel("rmd"))
