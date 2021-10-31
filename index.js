@@ -122,6 +122,8 @@ function sum(array, acc = 0) {
 //     return reversed;
 // }
 
+const reversE = str => (!str) ? "" : reversE(str.slice(1)) + str[0];
+
 // Reverse in place using recursion
 function reversed(string) {
   if (!string) return ""; // if the string is empty return an empty string
