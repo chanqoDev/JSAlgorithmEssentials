@@ -122,7 +122,7 @@ function sum(array, acc = 0) {
 //     return reversed;
 // }
 
-const reversE = str => (!str) ? "" : reversE(str.slice(1)) + str[0];
+const reversE = (str) => (!str ? "" : reversE(str.slice(1)) + str[0]);
 
 // Reverse in place using recursion
 function reversed(string) {
@@ -405,3 +405,36 @@ const firstVowel = (str) => {
 // console.log(firstVowel("rmna"));
 // console.log(firstVowel("romad"))
 // console.log(firstVowel("rmd"))
+
+// Write a function called "extend".
+
+// Given two objects, "extend" adds properties from the 2nd object to the 1st object.
+
+// Notes:
+
+// Add any keys that are not in the 1st object.
+// If the 1st object already has a given key, ignore it (do not overwrite the property value).
+// Do not modify the 2nd object at all.
+
+var object1 = {
+  a: 1,
+  b: 2,
+};
+var object2 = {
+  b: 4,
+  c: 3,
+  d: 6,
+  f: 66,
+};
+function extend(obj1, obj2) {
+  for (let key in obj2) {
+    if (obj1[key] === undefined) {
+      obj1[key] = obj2[key];
+    }
+  }
+}
+
+extend(object1, object2);
+
+console.log(object1); // --> {a: 1, b: 2, c: 3}
+console.log(object2); // --> {b: 4, c: 3}
